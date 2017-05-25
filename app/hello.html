@@ -1,0 +1,12 @@
+<h2>My First Angular 2 App</h2>
+	<div>Hi {{user}}</div>
+	<ul>
+		<li *ngFor="#myItem of itemList" (click)="clickItem(myItem)" >{{myItem.name}}</li>
+	</ul>
+	<input type="text" [(ngModel)]="newItem"><button (click)="addItem(newItem)">Add</button>
+	
+	<select class="form-control" required
+          [(ngModel)]="country" (change)="selectedCountry($event)" >
+          <option value="" selected disabled>Select Your Country</option>
+          <option *ngFor="#coun of countries" [value]="coun">{{coun}}</option>
+        </select>
